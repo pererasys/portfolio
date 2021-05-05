@@ -1,0 +1,62 @@
+@import "../variables";
+@import "../common";
+
+.landing {
+  width: 100%;
+  height: calc(100vh - #{$headerHeight});
+  display: flex;
+  flex-direction: column;
+
+  @include layout(map-get($colors, "background"));
+
+  @media screen and (min-width: $breakpoint-medium) {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  &.left {
+    align-items: flex-start;
+  }
+
+  &.right {
+    align-items: flex-end;
+  }
+
+  &.center {
+    align-items: center;
+    & h1 {
+      text-align: center;
+    }
+    & p.subtitle {
+      text-align: center;
+    }
+  }
+
+  & h1 {
+    font-size: 85px;
+    line-height: 85px;
+    margin-bottom: 24px;
+
+    @media screen and (max-width: $breakpoint-small) {
+      font-size: 50px;
+      line-height: 50px;
+      margin-bottom: 15px;
+    }
+
+    @media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+      font-size: 72px;
+      line-height: 72px;
+      margin-bottom: 15px;
+    }
+  }
+
+  & p.subtitle {
+    font-size: 32px;
+    font-weight: 300;
+    color: map-get($colors, "bodyText");
+
+    @media screen and (max-width: $breakpoint-medium) {
+      font-size: 24px;
+    }
+  }
+}

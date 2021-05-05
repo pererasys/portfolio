@@ -1,0 +1,29 @@
+@import "../variables";
+@import "../common";
+
+header.root {
+  position: fixed;
+  width: 100%;
+  background-color: rgba(map-get($colors, "background"), 0.95);
+
+  @include layout(rgba(map-get($colors, "background"), 0.95));
+}
+
+div.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: $headerHeight;
+}
+
+a.logo {
+  position: relative;
+  height: 30px;
+  width: calc(30px * 1.65803108808);
+  cursor: pointer;
+
+  @media (min-width: $breakpoint-medium) {
+    height: 40px;
+    width: calc(40px * 1.65803108808);
+  }
+}

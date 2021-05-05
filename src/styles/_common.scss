@@ -1,0 +1,21 @@
+@import "./variables";
+
+@mixin layout($backgroundColor) {
+  background-color: $backgroundColor;
+  padding: 0 10px;
+
+  @media (min-width: $breakpoint-medium) and (max-width: $breakpoint-xl) {
+    padding: 0 5%;
+  }
+  @media (min-width: $breakpoint-xl) {
+    padding: 0 10%;
+  }
+}
+
+@mixin buildTransition($property, $time, $easing) {
+  transition: $property $time $easing;
+  -moz-transition: $property $time $easing; /* Firefox 4 */
+  -webkit-transition: $property $time $easing; /* Safari and Chrome */
+  -o-transition: $property $time $easing; /* Opera */
+  -ms-transition: $property $time $easing; /* Explorer 10 */
+}

@@ -1,0 +1,9 @@
+@import "../variables";
+@import "../common";
+
+footer.root {
+  min-height: 300px;
+  display: flex;
+
+  @include layout(map-get($colors, "altBackground"));
+}

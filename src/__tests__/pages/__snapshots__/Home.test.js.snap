@@ -1,0 +1,233 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render without crashing 1`] = `
+Array [
+  <header>
+    <div>
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        <div
+          style={
+            Object {
+              "bottom": 0,
+              "boxSizing": "border-box",
+              "display": "block",
+              "left": 0,
+              "margin": 0,
+              "overflow": "hidden",
+              "position": "absolute",
+              "right": 0,
+              "top": 0,
+            }
+          }
+        >
+          <noscript>
+            <img
+              decoding="async"
+              src="/logo-primary.png"
+              srcSet="/_next/image?url=%2Flogo-primary.png&w=640&q=75 640w, /_next/image?url=%2Flogo-primary.png&w=750&q=75 750w, /_next/image?url=%2Flogo-primary.png&w=828&q=75 828w, /_next/image?url=%2Flogo-primary.png&w=1080&q=75 1080w, /_next/image?url=%2Flogo-primary.png&w=1200&q=75 1200w, /_next/image?url=%2Flogo-primary.png&w=1920&q=75 1920w, /_next/image?url=%2Flogo-primary.png&w=2048&q=75 2048w, /_next/image?url=%2Flogo-primary.png&w=3840&q=75 3840w"
+              style={
+                Object {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+          </noscript>
+          <img
+            decoding="async"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            style={
+              Object {
+                "border": "none",
+                "bottom": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": 0,
+                "left": 0,
+                "margin": "auto",
+                "maxHeight": "100%",
+                "maxWidth": "100%",
+                "minHeight": "100%",
+                "minWidth": "100%",
+                "objectFit": undefined,
+                "objectPosition": undefined,
+                "padding": 0,
+                "position": "absolute",
+                "right": 0,
+                "top": 0,
+                "width": 0,
+              }
+            }
+          />
+        </div>
+      </a>
+      <div>
+        <div
+          className="hamburger-react"
+          onClick={[Function]}
+          onKeyUp={[Function]}
+          role="button"
+          style={
+            Object {
+              "cursor": "pointer",
+              "height": "48px",
+              "outline": "none",
+              "position": "relative",
+              "transition": "0.4s cubic-bezier(0, 0, 0, 1)",
+              "userSelect": "none",
+              "width": "48px",
+            }
+          }
+          tabIndex={0}
+        >
+          <div
+            style={
+              Object {
+                "transform": "none",
+                "transition": "0.2s cubic-bezier(0, 0, 0, 1) 0.2s",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "black",
+                  "height": "2px",
+                  "left": "10px",
+                  "position": "absolute",
+                  "top": "15px",
+                  "transform": "none",
+                  "transition": "0.2s cubic-bezier(0, 0, 0, 1) 0s",
+                  "width": "28px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "opacity": "1",
+                "transition": "0.2s cubic-bezier(0, 0, 0, 1)",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "black",
+                  "height": "2px",
+                  "left": "10px",
+                  "position": "absolute",
+                  "top": "23px",
+                  "transition": "0.2s cubic-bezier(0, 0, 0, 1)",
+                  "width": "28px",
+                }
+              }
+            />
+          </div>
+          <div
+            style={
+              Object {
+                "transform": "none",
+                "transition": "0.2s cubic-bezier(0, 0, 0, 1) 0.2s",
+              }
+            }
+          >
+            <div
+              style={
+                Object {
+                  "background": "black",
+                  "height": "2px",
+                  "left": "10px",
+                  "position": "absolute",
+                  "top": "31px",
+                  "transform": "none",
+                  "transition": "0.2s cubic-bezier(0, 0, 0, 1) 0s",
+                  "width": "28px",
+                }
+              }
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        className=""
+      >
+        <ul>
+          <li>
+            <a
+              className=""
+              href="/"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <p>
+                Home
+              </p>
+            </a>
+          </li>
+          <li>
+            <a
+              className=""
+              href="/projects"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <p>
+                Projects
+              </p>
+            </a>
+          </li>
+          <li>
+            <a
+              className=""
+              href="/about"
+              onClick={[Function]}
+              onMouseEnter={[Function]}
+            >
+              <p>
+                About
+              </p>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>,
+  <div>
+    <div
+      className=" "
+    >
+      <h1>
+        Andrew Perera
+      </h1>
+      <p>
+        I build things.
+      </p>
+    </div>
+  </div>,
+  <footer>
+    footer
+  </footer>,
+]
+`;
