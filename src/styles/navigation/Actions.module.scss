@@ -1,0 +1,75 @@
+@import "../variables";
+@import "../common";
+
+.root {
+  position: fixed;
+  display: flex;
+  flex-direction: column-reverse;
+  z-index: 2;
+
+  bottom: 15px;
+  right: 15px;
+
+  @media screen and (max-width: $breakpoint-small) {
+    bottom: 5px;
+    right: 5px;
+  }
+}
+
+ul.actions {
+  display: flex;
+  flex-direction: column-reverse;
+
+  & li {
+    position: relative;
+    left: 100px;
+    transform: translateX(0);
+
+    @include buildTransition(transform, 0.25s, ease-in-out);
+
+    @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+        transition-delay: 50ms * $i;
+      }
+    }
+  }
+
+  &.active li {
+    transform: translateX(-100px);
+
+    @for $i from 1 through 50 {
+      &:nth-child(#{$i}) {
+        transition-delay: 50ms * $i;
+      }
+    }
+  }
+
+  & > * {
+    margin: 10px 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  z-index: 1;
+
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(map-get($colors, "background"), 0.9);
+
+  animation: fadeIn 0.25s;
+}

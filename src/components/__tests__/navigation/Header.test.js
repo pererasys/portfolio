@@ -45,7 +45,7 @@ describe("<Header />", () => {
     };
   };
 
-  it("should render children appropriately", () => {
+  it("should render without crashing", () => {
     const { component } = setup();
 
     expect(component.toJSON()).toMatchSnapshot();

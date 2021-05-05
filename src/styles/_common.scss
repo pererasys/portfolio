@@ -19,3 +19,9 @@
   -o-transition: $property $time $easing; /* Opera */
   -ms-transition: $property $time $easing; /* Explorer 10 */
 }
+
+@mixin shadow {
+  box-shadow: 0 0 25px #e6ecf8;
+  -webkit-box-shadow: 0 0 25px #e6ecf8;
+  -moz-box-shadow: 0 0 25px #e6ecf8;
+}

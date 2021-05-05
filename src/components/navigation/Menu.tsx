@@ -8,10 +8,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 
 import { Squash as Hamburger } from "hamburger-react";
-
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 
-import styles from "../../styles/navigation/menu.module.scss";
+import styles from "../../styles/navigation/Menu.module.scss";
 
 interface INavItem {
   label: string;
@@ -54,6 +53,10 @@ const Menu = () => {
       enableBodyScroll(elem);
     }
   }, [open]);
+
+  const onChat = () => {
+    console.log("chatting");
+  };
 
   const classes = [styles.root];
 

@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./common";
 
 html,
 body,
@@ -21,6 +22,7 @@ html.wf-loading * {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
 }
 
 * {
@@ -150,4 +152,8 @@ hr {
   border: 0;
   border-top: solid 0.5px map-get($colors, "border");
   margin: 0;
+}
+
+section {
+  @include layout(map-get($colors, "background"));
 }
