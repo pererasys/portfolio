@@ -1,10 +1,15 @@
 import { create, act } from "react-test-renderer";
+import preloadAll from "jest-next-dynamic";
 
 import { PageProvider } from "../__utils";
 
 import About from "../../pages/about";
 
-const setup = () => {
+beforeAll(async () => {
+  await preloadAll();
+});
+
+const setup = async () => {
   const page = create(
     <PageProvider pathname="/about">
       <About />
@@ -14,8 +19,8 @@ const setup = () => {
   return { page };
 };
 
-test("Should render without crashing", () => {
-  const { page } = setup();
+test("Should render without crashing", async () => {
+  const { page } = await setup();
 
   expect(page.toJSON()).toMatchSnapshot();
 });

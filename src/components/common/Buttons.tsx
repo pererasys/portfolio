@@ -4,6 +4,7 @@
  */
 
 import {
+  AnchorHTMLAttributes,
   ButtonHTMLAttributes,
   DetailedHTMLProps,
   Fragment,
@@ -91,25 +92,26 @@ export const ButtonOutline = ({
   );
 };
 
-interface IIconAction {
+interface IIconAction
+  extends DetailedHTMLProps<
+    AnchorHTMLAttributes<HTMLAnchorElement>,
+    HTMLAnchorElement
+  > {
   icon: IconProp;
   color?: Color;
   size?: "sm" | "default";
-  onClick: (
-    event: MouseEvent<HTMLAnchorElement, globalThis.MouseEvent>
-  ) => void;
 }
 
 export const IconAction = ({
   color = "primary",
   size = "default",
   icon,
-  onClick,
+  ...props
 }: IIconAction) => {
   return (
     <a
       className={styles[`${color}IconAction${size === "sm" ? "Sm" : ""}`]}
-      onClick={onClick}
+      {...props}
     >
       <FontAwesomeIcon icon={icon} className={styles.icon} />
     </a>
@@ -120,11 +122,11 @@ export const IconButton = ({
   color = "primary",
   size = "default",
   icon,
-  onClick,
+  ...props
 }: IIconAction) => (
   <a
     className={styles[`${color}IconBtn${size === "sm" ? "Sm" : ""}`]}
-    onClick={onClick}
+    {...props}
   >
     <FontAwesomeIcon icon={icon} className={styles.icon} />
   </a>

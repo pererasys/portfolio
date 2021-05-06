@@ -24,6 +24,7 @@ ul.actions {
     position: relative;
     left: 100px;
     transform: translateX(0);
+    margin: 0 0 15px 0;
 
     @include buildTransition(transform, 0.25s, ease-in-out);
 
@@ -42,10 +43,6 @@ ul.actions {
         transition-delay: 50ms * $i;
       }
     }
-  }
-
-  & > * {
-    margin: 10px 0;
   }
 }
 

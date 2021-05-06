@@ -6,14 +6,11 @@
 import React, { useEffect, useState } from "react";
 
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
-import {
-  faEllipsisH,
-  faEnvelope,
-  faTimes,
-} from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
+  faMediumM,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
 
@@ -52,30 +49,46 @@ const Actions = () => {
     <React.Fragment>
       <div className={styles.root}>
         <IconButton
-          icon={open ? faTimes : faEllipsisH}
+          icon={open ? faTimes : faExternalLinkAlt}
           onClick={open ? onClose : onOpen}
           color="accent"
         />
         <ul className={actionClasses.join(" ")}>
           <li>
             <IconButton
-              icon={faLinkedin}
-              onClick={undefined}
-              color="lightBlue"
+              href="https://github.com/pererasys"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={faGithub}
+              color="green"
             />
           </li>
           <li>
             <IconButton
-              icon={faGithub}
-              onClick={undefined}
-              color="lightPurple"
+              href="https://pererasys.medium.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={faMediumM}
+              color="black"
             />
           </li>
           <li>
-            <IconButton icon={faTwitter} onClick={undefined} color="yellow" />
+            <IconButton
+              href="https://twitter.com/aperera14"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={faTwitter}
+              color="darkBlue"
+            />
           </li>
           <li>
-            <IconButton icon={faEnvelope} onClick={undefined} color="green" />
+            <IconButton
+              href="https://www.linkedin.com/in/pererasys/"
+              target="_blank"
+              rel="noopener noreferrer"
+              icon={faLinkedin}
+              color="lightBlue"
+            />
           </li>
         </ul>
       </div>

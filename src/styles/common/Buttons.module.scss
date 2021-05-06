@@ -83,11 +83,11 @@
 
   @include shadow;
 
-  @include buildTransition(background-color, 0.25s, linear);
-  @include buildTransition(color, 0.25s, linear);
+  @include buildTransition(background-color, 0.5s, ease-in-out);
+  @include buildTransition(color, 0.5s, ease-in-out);
 
   &:hover {
-    background-color: lighten($color, 10);
+    background-color: darken($color, 10);
   }
 }
 

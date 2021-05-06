@@ -4,5 +4,8 @@ module.exports = {
     production: {
       plugins: ["transform-remove-console"],
     },
+    test: {
+      plugins: ["transform-dynamic-import"],
+    },
   },
 };
