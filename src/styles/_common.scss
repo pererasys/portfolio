@@ -21,7 +21,7 @@
 }
 
 @mixin shadow {
-  box-shadow: 0 0 25px #e6ecf8;
-  -webkit-box-shadow: 0 0 25px #e6ecf8;
-  -moz-box-shadow: 0 0 25px #e6ecf8;
+  box-shadow: 0 0 25px map-get($colors, "shadow");
+  -webkit-box-shadow: 0 0 25px map-get($colors, "shadow");
+  -moz-box-shadow: 0 0 25px map-get($colors, "shadow");
 }

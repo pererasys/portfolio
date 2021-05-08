@@ -18,9 +18,15 @@ import styles from "../../styles/navigation/Page.module.scss";
 interface Props {
   title: string;
   description: string;
+  hideFooter?: boolean;
 }
 
-const Page: React.FC<Props> = ({ title, description, children }) => {
+const Page: React.FC<Props> = ({
+  title,
+  description,
+  hideFooter,
+  children,
+}) => {
   const router = useRouter();
   title = `${title} | Andrew Perera`;
 
@@ -67,7 +73,12 @@ const Page: React.FC<Props> = ({ title, description, children }) => {
       </Head>
       <Header />
       <div className={styles.root}>{children}</div>
-      <Footer />
+      {!hideFooter && (
+        <React.Fragment>
+          <hr />
+          <Footer />
+        </React.Fragment>
+      )}
       <Actions />
     </React.Fragment>
   );

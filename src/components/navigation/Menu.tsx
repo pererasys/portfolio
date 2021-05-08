@@ -54,10 +54,6 @@ const Menu = () => {
     }
   }, [open]);
 
-  const onChat = () => {
-    console.log("chatting");
-  };
-
   const classes = [styles.root];
 
   if (open) classes.push(styles.active);

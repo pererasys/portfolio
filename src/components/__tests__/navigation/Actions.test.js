@@ -16,4 +16,10 @@ describe("<Actions />", () => {
 
     expect(component.toJSON()).toMatchSnapshot();
   });
+
+  it("should render without crashing", () => {
+    const { component } = setup();
+
+    expect(component.toJSON()).toMatchSnapshot();
+  });
 });

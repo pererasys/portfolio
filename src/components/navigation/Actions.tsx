@@ -6,7 +6,7 @@
 import React, { useEffect, useState } from "react";
 
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
-import { faExternalLinkAlt, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faPlus, faTimes } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
@@ -49,7 +49,7 @@ const Actions = () => {
     <React.Fragment>
       <div className={styles.root}>
         <IconButton
-          icon={open ? faTimes : faExternalLinkAlt}
+          icon={open ? faTimes : faPlus}
           onClick={open ? onClose : onOpen}
           color="accent"
         />

@@ -24,9 +24,10 @@ $colors: (
   "grey": #4f4f4f,
   "darkGrey": #333333,
   "lightGrey": #4e5861,
+  "shadow": #e6ecf8,
 );
 
-$lightColors: (
+$dark: (
   "primary": #5971ff,
   "accent": #ff5555,
   "secondary": #d3d3d3,
@@ -52,6 +53,7 @@ $lightColors: (
   "grey": #4f4f4f,
   "darkGrey": #333333,
   "lightGrey": #4e5861,
+  "shadow": #424242,
 );
 
 $breakpoint-xs: 0px;

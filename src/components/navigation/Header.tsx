@@ -19,16 +19,14 @@ export const Logo = () => (
   </Link>
 );
 
-const Header: React.FC<{}> = () => {
+const Header = () => {
   return (
-    <React.Fragment>
-      <header className={styles.root}>
-        <div className={styles.content}>
-          <Logo />
-          <Menu />
-        </div>
-      </header>
-    </React.Fragment>
+    <header className={styles.root}>
+      <div className={styles.content}>
+        <Logo />
+        <Menu />
+      </div>
+    </header>
   );
 };
 

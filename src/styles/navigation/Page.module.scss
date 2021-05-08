@@ -3,5 +3,9 @@
 
 .root {
   flex: 1;
-  margin-top: $headerHeight;
+  margin-top: calc(#{$headerHeight} + 10px);
+
+  @media (max-width: $breakpoint-medium) {
+    margin-top: calc(60px + 10px);
+  }
 }
