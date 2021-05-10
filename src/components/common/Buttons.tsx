@@ -16,7 +16,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import styles from "../../styles/common/Buttons.module.scss";
 
-type Color =
+export type Color =
   | "primary"
   | "accent"
   | "orange"
@@ -34,7 +34,7 @@ type Color =
   | "secondary"
   | "white";
 
-interface IButton
+export interface IButton
   extends DetailedHTMLProps<
     ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
@@ -92,7 +92,7 @@ export const ButtonOutline = ({
   );
 };
 
-interface IIconAction
+export interface IIconAction
   extends DetailedHTMLProps<
     AnchorHTMLAttributes<HTMLAnchorElement>,
     HTMLAnchorElement

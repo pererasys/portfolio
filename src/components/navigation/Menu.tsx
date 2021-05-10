@@ -10,6 +10,16 @@ import Link from "next/link";
 import { Squash as Hamburger } from "hamburger-react";
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 
+import {
+  faGithub,
+  faLinkedin,
+  faMediumM,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+
+import { IconButton, Color } from "../common/Buttons";
+
 import styles from "../../styles/navigation/Menu.module.scss";
 
 interface INavItem {
@@ -36,10 +46,51 @@ export const NavItem = ({ label, path }: INavItem) => {
   );
 };
 
+interface ActionProps {
+  href: string;
+  icon: IconProp;
+  color: Color;
+}
+
+const Action = (props: ActionProps) => (
+  <li>
+    <IconButton
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      icon={props.icon}
+      color={props.color}
+    />
+  </li>
+);
+
 const ROUTES = [
   { label: "Home", path: "/" },
   { label: "Projects", path: "/projects" },
   { label: "About", path: "/about" },
+];
+
+const ACTIONS = [
+  {
+    href: "https://github.com/pererasys",
+    icon: faGithub,
+    color: "accent",
+  },
+  {
+    href: "https://pererasys.medium.com/",
+    icon: faMediumM,
+    color: "black",
+  },
+  {
+    href: "https://twitter.com/aperera14",
+    icon: faTwitter,
+    color: "darkBlue",
+  },
+  {
+    href: "https://linkedin.com/in/pererasys",
+    icon: faLinkedin,
+    color: "lightBlue",
+  },
 ];
 
 const Menu = () => {
@@ -64,9 +115,14 @@ const Menu = () => {
         <Hamburger size={28} color="black" toggled={open} toggle={setOpen} />
       </div>
       <div className={classes.join(" ")}>
-        <ul className={styles.navigation}>
+        <ul className={styles.routes}>
           {ROUTES.map((route) => (
             <NavItem {...route} key={route.label} />
+          ))}
+        </ul>
+        <ul className={styles.actions}>
+          {ACTIONS.map(({ color, ...action }) => (
+            <Action color={color as Color} {...action} key={action.href} />
           ))}
         </ul>
       </div>

@@ -5,7 +5,7 @@ header.root {
   position: fixed;
   width: 100%;
   background-color: rgba(map-get($colors, "background"), 0.95);
-  z-index: 1;
+  z-index: 1000;
 
   @include layout(rgba(map-get($colors, "background"), 0.95));
 }
@@ -29,5 +29,6 @@ a.logo {
   @media (min-width: $breakpoint-medium) {
     height: 40px;
     width: calc(40px * 1.65803108808);
+    margin-right: 25px;
   }
 }

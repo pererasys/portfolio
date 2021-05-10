@@ -6,12 +6,9 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import dynamic from "next/dynamic";
 
 import Footer from "./Footer";
 import Header from "./Header";
-
-const Actions = dynamic(() => import("./Actions"), { ssr: false });
 
 import styles from "../../styles/navigation/Page.module.scss";
 
@@ -79,7 +76,6 @@ const Page: React.FC<Props> = ({
           <Footer />
         </React.Fragment>
       )}
-      <Actions />
     </React.Fragment>
   );
 };

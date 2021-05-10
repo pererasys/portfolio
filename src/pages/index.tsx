@@ -6,7 +6,6 @@
 import Page from "../components/navigation/Page";
 
 import Landing from "../components/common/Landing";
-import Profile from "../components/Profile";
 
 export default function Home() {
   return (

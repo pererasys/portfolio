@@ -2,56 +2,78 @@
 @import "../common";
 
 .root {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
   @media (max-width: $breakpoint-medium) {
     position: fixed;
     top: 60px;
-    left: 100%;
-    display: flex;
+    left: 0;
     flex-direction: column;
-    height: calc(100vh - 60px);
+    justify-content: flex-start;
+    align-items: flex-start;
     width: 100%;
-    background-color: rgba(map-get($colors, "background"), 0.95);
+    height: calc(100vh - 60px);
     overflow-x: hidden;
-    z-index: 1;
+    overflow-y: scroll;
+    z-index: 0;
+    visibility: hidden;
 
-    @include layout(rgba(map-get($colors, "background"), 0.95));
+    @include layout(rgba(map-get($colors, "background"), 0));
 
-    transform: translateX(0);
-    @include buildTransition(transform, 0.25s, ease-in-out);
-
-    & > * {
-      opacity: 0.5;
-      @include buildTransition(opacity, 0.25s, ease-in-out);
-    }
+    @include buildTransition(background-color, 0.25s, ease-in-out);
 
     &::-webkit-scrollbar {
       display: none;
     }
 
-    &.active {
+    & ul {
+      position: relative;
       transform: translateX(-100%);
-      & > * {
-        opacity: 1;
+
+      @include buildTransition(transform, 0.25s, ease-in-out);
+    }
+
+    &.active {
+      visibility: visible;
+
+      @include layout(rgba(map-get($colors, "background"), 0.95));
+
+      & ul {
+        transform: translateX(0);
       }
     }
   }
 }
 
-ul.navigation {
+@mixin list {
   display: flex;
+  align-items: center;
+
+  & li {
+    margin: 0 10px;
+  }
+}
+
+ul.routes {
+  @include list;
 
   @media (max-width: $breakpoint-medium) {
     flex-direction: column;
-  }
+    align-items: flex-start;
 
-  @media (min-width: $breakpoint-medium) {
-    flex-direction: row;
-    align-items: center;
-
-    & > * {
-      margin: 0 10px;
+    & li {
+      margin: 5px 0;
     }
+
+    padding: 15px 0;
   }
+}
+
+ul.actions {
+  @include list;
 }
 
 @mixin activeLink() {
@@ -95,7 +117,7 @@ ul.navigation {
     background-color: map-get($colors, "highlight") !important;
   }
 
-  @media screen and (max-width: $breakpoint-small) {
+  @media screen and (max-width: $breakpoint-medium) {
     margin: 5px 0;
   }
 
