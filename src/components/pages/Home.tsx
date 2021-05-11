@@ -52,22 +52,20 @@ const ACTIVITIES = [
   },
 ];
 
-export const Activities = () => {
-  return (
-    <section className={styles.activities}>
-      <div className={styles.header}>
-        <h1>Activities</h1>
-        <p>Get to know me by exploring my interests.</p>
-      </div>
+export const Activities = () => (
+  <section className={styles.activities}>
+    <div className={styles.header}>
+      <h1>Activities</h1>
+      <p>Get to know me by exploring my interests.</p>
+    </div>
 
-      <ul>
-        {ACTIVITIES.map((skill, index) => (
-          <Activity {...skill} key={String(index)} />
-        ))}
-      </ul>
-    </section>
-  );
-};
+    <ul>
+      {ACTIVITIES.map((skill, index) => (
+        <Activity {...skill} key={String(index)} />
+      ))}
+    </ul>
+  </section>
+);
 
 export const Profile = () => (
   <section className={styles.profile}>
