@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../common";
+@import "../../variables";
+@import "../../common";
 
 .root {
   position: relative;
@@ -10,10 +10,10 @@
   margin: auto;
   width: fit-content;
   border-radius: 2.5px;
-  box-shadow: $shadow;
   background-color: map-get($colors, "background");
-  z-index: 1000;
   cursor: default;
+
+  @include shadow;
 
   &.left {
     left: 0;

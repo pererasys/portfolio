@@ -5,12 +5,13 @@
 
 import React from "react";
 
-import styles from "../../styles/navigation/Footer.module.scss";
+import styles from "../../styles/components/navigation/Footer.module.scss";
 
 const Footer = () => (
   <footer className={styles.root}>
     <div className={styles.content}>
-      <p className={styles.copyright}>Copyright &copy; 2021</p>
+      <p>Copyright &copy; {new Date().getFullYear()}</p>
+      <p>Designed & developed by me!</p>
     </div>
   </footer>
 );

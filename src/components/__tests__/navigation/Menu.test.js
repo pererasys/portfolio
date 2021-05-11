@@ -1,7 +1,5 @@
 import * as nextRouter from "next/router";
-import { create, act } from "react-test-renderer";
-
-import { Squash as Hamburger } from "hamburger-react";
+import { create } from "react-test-renderer";
 
 import Menu from "../../navigation/Menu";
 

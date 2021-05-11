@@ -21,6 +21,10 @@ class CustomDocument extends Document {
     return (
       <Html lang="en">
         <Head>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+          />
           <link rel="icon" href="/favicon.png" />
           <link
             href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Rubik:wght@300;400;500;600;700;800&display=swap"

@@ -8,11 +8,12 @@ body,
   display: flex;
   flex-direction: column;
   height: 100%;
-  padding: 0;
   margin: 0;
   font-family: $lato;
   color: map-get($colors, "text");
   background-color: map-get($colors, "background");
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 html.wf-loading * {
@@ -24,6 +25,12 @@ a {
   color: map-get($colors, "primary");
   text-decoration: none;
   cursor: pointer;
+
+  @include buildTransition(color, 0.25s, ease-in-out);
+
+  &:hover {
+    color: lighten(map-get($colors, "primary"), 10);
+  }
 }
 
 * {
@@ -40,11 +47,7 @@ p {
   line-height: 25px;
   color: map-get($colors, "bodyText");
 
-  @media (max-width: $breakpoint-small) {
-    font-size: 16px;
-    line-height: 20px;
-  }
-  @media (min-width: $breakpoint-small) and (max-width: $breakpoint-medium) {
+  @media (max-width: $breakpoint-medium) {
     font-size: 18px;
     line-height: 24px;
   }

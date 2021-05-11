@@ -5,7 +5,7 @@ module.exports = {
       plugins: ["transform-remove-console"],
     },
     test: {
-      plugins: ["transform-dynamic-import"],
+      plugins: ["dynamic-import-node"],
     },
   },
 };

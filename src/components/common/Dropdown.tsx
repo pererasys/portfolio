@@ -10,7 +10,7 @@ import Link from "next/link";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "../../styles/common/Dropdown.module.scss";
+import styles from "../../styles/components/common/Dropdown.module.scss";
 
 interface IDropdownOption {
   label: string;

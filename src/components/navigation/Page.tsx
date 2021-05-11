@@ -6,24 +6,21 @@
 import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
+import dynamic from "next/dynamic";
 
 import Footer from "./Footer";
 import Header from "./Header";
 
-import styles from "../../styles/navigation/Page.module.scss";
+const Chat = dynamic(() => import("../Chat"), { ssr: false });
+
+import styles from "../../styles/components/navigation/Page.module.scss";
 
 interface Props {
   title: string;
   description: string;
-  hideFooter?: boolean;
 }
 
-const Page: React.FC<Props> = ({
-  title,
-  description,
-  hideFooter,
-  children,
-}) => {
+const Page: React.FC<Props> = ({ title, description, children }) => {
   const router = useRouter();
   title = `${title} | Andrew Perera`;
 
@@ -69,13 +66,11 @@ const Page: React.FC<Props> = ({
         <title>{title}</title>
       </Head>
       <Header />
-      <div className={styles.root}>{children}</div>
-      {!hideFooter && (
-        <React.Fragment>
-          <hr />
-          <Footer />
-        </React.Fragment>
-      )}
+      <div className={styles.root}>
+        {children}
+        <Chat />
+      </div>
+      <Footer />
     </React.Fragment>
   );
 };

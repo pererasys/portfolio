@@ -1,0 +1,12 @@
+@import "../../variables";
+@import "../../common";
+
+.root {
+  flex: 1;
+  margin-top: $headerHeight;
+  position: relative;
+
+  @media (max-width: $breakpoint-small) {
+    margin-top: $collapsedHeaderHeight;
+  }
+}

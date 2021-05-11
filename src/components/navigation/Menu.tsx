@@ -20,7 +20,7 @@ import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
 import { IconButton, Color } from "../common/Buttons";
 
-import styles from "../../styles/navigation/Menu.module.scss";
+import styles from "../../styles/components/navigation/Menu.module.scss";
 
 interface INavItem {
   label: string;
@@ -74,7 +74,7 @@ const ACTIONS = [
   {
     href: "https://github.com/pererasys",
     icon: faGithub,
-    color: "accent",
+    color: "green",
   },
   {
     href: "https://pererasys.medium.com/",

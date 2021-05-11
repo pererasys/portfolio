@@ -6,11 +6,16 @@
 import Page from "../components/navigation/Page";
 
 import Landing from "../components/common/Landing";
+import { LandingContent, Profile, Activities } from "../components/pages/Home";
 
 export default function Home() {
   return (
-    <Page title="Home" description="description" hideFooter>
-      <Landing title="Andrew Perera" subtitle="I build things." />
+    <Page title="Home" description="description">
+      <Landing title="Andrew Perera" subtitle="I build things.">
+        <LandingContent />
+      </Landing>
+      <Profile />
+      <Activities />
     </Page>
   );
 }

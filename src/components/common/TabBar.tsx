@@ -5,7 +5,7 @@
 
 import Link from "next/link";
 
-import styles from "../../styles/common/Tabbar.module.scss";
+import styles from "../../styles/components/common/Tabbar.module.scss";
 
 interface ITab {
   path: string;

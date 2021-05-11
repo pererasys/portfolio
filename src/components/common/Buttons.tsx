@@ -14,7 +14,7 @@ import {
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import styles from "../../styles/common/Buttons.module.scss";
+import styles from "../../styles/components/common/Buttons.module.scss";
 
 export type Color =
   | "primary"

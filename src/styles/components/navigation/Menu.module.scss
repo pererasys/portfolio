@@ -1,5 +1,5 @@
-@import "../variables";
-@import "../common";
+@import "../../variables";
+@import "../../common";
 
 .root {
   flex: 1;
@@ -9,19 +9,18 @@
 
   @media (max-width: $breakpoint-medium) {
     position: fixed;
-    top: 60px;
+    top: $collapsedHeaderHeight;
     left: 0;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     width: 100%;
-    height: calc(100vh - 60px);
+    height: calc(100vh - #{$collapsedHeaderHeight});
     overflow-x: hidden;
     overflow-y: scroll;
-    z-index: 0;
+    z-index: 1000;
     visibility: hidden;
-
-    @include layout(rgba(map-get($colors, "background"), 0));
+    background-color: transparent;
 
     @include buildTransition(background-color, 0.25s, ease-in-out);
 

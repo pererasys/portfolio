@@ -9,7 +9,7 @@ import Link from "next/link";
 
 import Menu from "./Menu";
 
-import styles from "../../styles/navigation/Header.module.scss";
+import styles from "../../styles/components/navigation/Header.module.scss";
 
 export const Logo = () => (
   <Link href="/">
