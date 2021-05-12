@@ -25,9 +25,10 @@ exports[`<Header /> should render without crashing 1`] = `
       >
         <noscript>
           <img
+            alt="Brand logo"
             decoding="async"
-            src="/logo-primary.png"
-            srcSet="/_next/image?url=%2Flogo-primary.png&w=640&q=75 640w, /_next/image?url=%2Flogo-primary.png&w=750&q=75 750w, /_next/image?url=%2Flogo-primary.png&w=828&q=75 828w, /_next/image?url=%2Flogo-primary.png&w=1080&q=75 1080w, /_next/image?url=%2Flogo-primary.png&w=1200&q=75 1200w, /_next/image?url=%2Flogo-primary.png&w=1920&q=75 1920w, /_next/image?url=%2Flogo-primary.png&w=2048&q=75 2048w, /_next/image?url=%2Flogo-primary.png&w=3840&q=75 3840w"
+            src="/images/logo-primary.png"
+            srcSet="/_next/image?url=%2Fimages%2Flogo-primary.png&w=640&q=75 640w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=750&q=75 750w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=828&q=75 828w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=1080&q=75 1080w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=1200&q=75 1200w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=1920&q=75 1920w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=2048&q=75 2048w, /_next/image?url=%2Fimages%2Flogo-primary.png&w=3840&q=75 3840w"
             style={
               Object {
                 "border": "none",
@@ -53,6 +54,7 @@ exports[`<Header /> should render without crashing 1`] = `
           />
         </noscript>
         <img
+          alt="Brand logo"
           decoding="async"
           src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           style={

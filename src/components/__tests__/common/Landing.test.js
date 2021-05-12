@@ -11,8 +11,16 @@ const setup = (props) => {
   return {
     title,
     subtitle,
+    component,
   };
 };
+
+test("should render without crashing", () => {
+  const props = { title: "Test", subtitle: "test subtitle" };
+  const { component } = setup(props);
+
+  expect(component.toJSON()).toMatchSnapshot();
+});
 
 test("should render appropriately", () => {
   const props = { title: "Test", subtitle: "test subtitle" };

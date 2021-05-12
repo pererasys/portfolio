@@ -11,9 +11,7 @@ import { LandingContent, Profile, Activities } from "../components/pages/Home";
 export default function Home() {
   return (
     <Page title="Home" description="description">
-      <Landing title="Andrew Perera" subtitle="I build things.">
-        <LandingContent />
-      </Landing>
+      <Landing title="Andrew Perera" subtitle="I build things." />
       <Profile />
       <Activities />
     </Page>

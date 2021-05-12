@@ -14,7 +14,7 @@ import styles from "../../styles/components/navigation/Header.module.scss";
 export const Logo = () => (
   <Link href="/">
     <a className={styles.logo}>
-      <Image src="/logo-primary.png" layout="fill" />
+      <Image src="/images/logo-primary.png" alt="Brand logo" layout="fill" />
     </a>
   </Link>
 );

@@ -56,7 +56,7 @@ export const Activities = () => (
   <section className={styles.activities}>
     <div className={styles.header}>
       <h1>Activities</h1>
-      <p>Get to know me by exploring my interests.</p>
+      <p>Get to know me by exploring my professional interests.</p>
     </div>
 
     <ul>
@@ -71,7 +71,7 @@ export const Profile = () => (
   <section className={styles.profile}>
     <div>
       <Image
-        src="/me.jpeg"
+        src="/images/me.jpeg"
         height={300}
         width={300}
         layout="intrinsic"

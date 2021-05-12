@@ -7,7 +7,7 @@ exports[`<Home.Activities /> should render without crashing 1`] = `
       Activities
     </h1>
     <p>
-      Get to know me by exploring my interests.
+      Get to know me by exploring my professional interests.
     </p>
   </div>
   <ul>
@@ -133,8 +133,8 @@ exports[`<Home.Profile /> should render without crashing 1`] = `
       <noscript>
         <img
           decoding="async"
-          src="/me.jpeg"
-          srcSet="/_next/image?url=%2Fme.jpeg&w=384&q=75 1x, /_next/image?url=%2Fme.jpeg&w=640&q=75 2x"
+          src="/images/me.jpeg"
+          srcSet="/_next/image?url=%2Fimages%2Fme.jpeg&w=384&q=75 1x, /_next/image?url=%2Fimages%2Fme.jpeg&w=640&q=75 2x"
           style={
             Object {
               "border": "none",

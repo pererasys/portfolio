@@ -3,6 +3,7 @@
  * Copyright (C) 2021
  */
 
+import Image from "next/image";
 import React from "react";
 
 import styles from "../../styles/components/common/Landing.module.scss";
@@ -20,7 +21,14 @@ const Landing: React.FC<Props> = ({ position = "center", ...props }) => {
         <h1>{props.title}</h1>
         <p className={styles.subtitle}>{props.subtitle}</p>
       </div>
-      {props.children}
+      <div className={styles.content}>{props.children}</div>
+      <Image
+        src="/images/wave.svg"
+        layout="fill"
+        objectFit="cover"
+        objectPosition="bottom"
+        className={styles.wave}
+      />
     </section>
   );
 };

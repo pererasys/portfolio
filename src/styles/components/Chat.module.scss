@@ -17,10 +17,13 @@
 
   @include buildTransition(transform, 0.25s, ease-in-out);
 
+  transition-delay: 0s;
+
   transform: translateY(calc(100% + 15px));
 
   &.active {
     transform: translateY(0);
+    transition-delay: 0.25s;
   }
 }
 
@@ -36,6 +39,7 @@
   flex-direction: column;
   background-color: map-get($colors, "background");
   border-radius: 5px;
+  height: calc(100vh - #{$headerHeight} - 15px);
 
   @include shadow;
   @include component;
@@ -67,14 +71,8 @@ ul.messageList {
   flex-direction: column;
   align-items: center;
   padding: 15px;
-  min-height: 150px;
-  max-height: 300px;
   overflow-x: hidden;
   overflow-y: scroll;
-
-  @media screen and (max-width: $breakpoint-small) {
-    max-height: unset;
-  }
 }
 
 li.message {

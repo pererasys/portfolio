@@ -31,7 +31,7 @@ describe("<Logo />", () => {
 
     expect(link.props.href).toBe("/");
 
-    expect(image.props.src).toBe("/logo-primary.png");
+    expect(image.props.src).toBe("/images/logo-primary.png");
     expect(image.props.layout).toBe("fill");
   });
 });

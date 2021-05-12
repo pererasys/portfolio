@@ -2,6 +2,7 @@
 @import "../../common";
 
 .landing {
+  position: relative;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -61,4 +62,13 @@
       line-height: 28px;
     }
   }
+}
+
+.content {
+  z-index: 1;
+}
+
+.wave {
+  position: relative;
+  z-index: 0;
 }
