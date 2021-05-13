@@ -3,10 +3,10 @@
  * Copyright (C) 2021
  */
 
-import Page from "../components/navigation/Page";
+import Page from "../components/Page";
 
 import Landing from "../components/common/Landing";
-import { LandingContent, Profile, Activities } from "../components/pages/Home";
+import { Profile, Activities, Develop } from "../components/pages/Home";
 
 export default function Home() {
   return (
@@ -14,6 +14,7 @@ export default function Home() {
       <Landing title="Andrew Perera" subtitle="I build things." />
       <Profile />
       <Activities />
+      <Develop />
     </Page>
   );
 }

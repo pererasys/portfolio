@@ -3,9 +3,36 @@
  * Copyright (C) 2020 - All rights reserved
  */
 
-import { DetailedHTMLProps, InputHTMLAttributes } from "react";
+import React, {
+  DetailedHTMLProps,
+  InputHTMLAttributes,
+  LabelHTMLAttributes,
+  TextareaHTMLAttributes,
+} from "react";
 
 import styles from "../../styles/components/common/Inputs.module.scss";
+
+interface IInputLabel
+  extends DetailedHTMLProps<
+    LabelHTMLAttributes<HTMLLabelElement>,
+    HTMLLabelElement
+  > {
+  label: string;
+  helper?: string;
+  size: "lg" | "sm";
+}
+
+export const InputLabel = ({
+  size = "lg",
+  label,
+  helper,
+  ...props
+}: IInputLabel) => (
+  <label className={size === "sm" ? styles.inputSm : styles.input} {...props}>
+    {label}
+    {helper && <p className={styles.helper}>{helper}</p>}
+  </label>
+);
 
 interface IFormInput
   extends DetailedHTMLProps<
@@ -14,12 +41,14 @@ interface IFormInput
   > {
   inputSize?: "lg" | "sm";
   label: string;
+  helperText?: string;
   error?: string | undefined;
 }
 
 export const FormInput = ({
   name,
   label,
+  helperText,
   error,
   inputSize = "lg",
   ...props
@@ -31,9 +60,12 @@ export const FormInput = ({
 
   return (
     <div className={styles.formGroup}>
-      <label htmlFor={name} className={inputClass}>
-        {label}
-      </label>
+      <InputLabel
+        size={inputSize}
+        label={label}
+        helper={helperText ? helperText : !props.required && "Optional"}
+        htmlFor={name}
+      />
       <input
         name={name}
         className={classes}
@@ -44,3 +76,37 @@ export const FormInput = ({
     </div>
   );
 };
+
+interface ITextBox
+  extends DetailedHTMLProps<
+    TextareaHTMLAttributes<HTMLTextAreaElement>,
+    HTMLTextAreaElement
+  > {
+  inputSize?: "lg" | "sm";
+  label: string;
+  helperText?: string;
+  error?: string | undefined;
+}
+
+export const TextBox = ({
+  name,
+  label,
+  helperText,
+  error,
+  ...props
+}: ITextBox) => (
+  <div className={styles.formGroup}>
+    <InputLabel
+      size="lg"
+      label={label}
+      helper={helperText ? helperText : !props.required && "Optional"}
+      htmlFor={name}
+    />
+    <textarea
+      placeholder={props.placeholder || label}
+      className={styles.textBox}
+      {...props}
+    ></textarea>
+    {error && <p className={styles.error}>{error}</p>}
+  </div>
+);

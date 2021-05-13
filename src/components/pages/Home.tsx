@@ -5,11 +5,14 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { faBitcoin, faMedium } from "@fortawesome/free-brands-svg-icons";
+
+import { Button } from "../common/Buttons";
 
 import styles from "../../styles/pages/Home.module.scss";
 
@@ -92,4 +95,20 @@ export const Profile = () => (
   </section>
 );
 
-export const LandingContent = () => <div></div>;
+export const Develop = () => {
+  const router = useRouter();
+
+  const onNavigate = () => {
+    router.push("/develop");
+  };
+
+  return (
+    <section className={styles.develop}>
+      <div className={styles.header}>
+        <h1>Looking for a developer?</h1>
+        <p>Tell me about your project!</p>
+      </div>
+      <Button label="Get Started" onClick={onNavigate} />
+    </section>
+  );
+};

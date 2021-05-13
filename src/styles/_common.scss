@@ -25,3 +25,24 @@
   -webkit-box-shadow: 0 0 25px map-get($colors, "shadow");
   -moz-box-shadow: 0 0 25px map-get($colors, "shadow");
 }
+
+@mixin formInput() {
+  outline: none;
+  border: none;
+  font-family: $lato;
+  font-weight: 300;
+  color: map-get($colors, "text");
+  background-color: map-get($colors, "altBackground");
+  border-radius: 1.5px;
+
+  @include buildTransition(border-color, 0.25s, ease-in-out);
+  @include buildTransition(background-color, 0.25s, ease-in-out);
+
+  @include placeholder {
+    color: map-get($colors, "lightGrey");
+  }
+
+  &.error {
+    background-color: lighten(map-get($colors, "red"), 20);
+  }
+}

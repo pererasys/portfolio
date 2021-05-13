@@ -22,52 +22,10 @@ import { IconButton, Color } from "../common/Buttons";
 
 import styles from "../../styles/components/navigation/Menu.module.scss";
 
-interface INavItem {
-  label: string;
-  path: string;
-}
-
-export const NavItem = ({ label, path }: INavItem) => {
-  const router = useRouter();
-
-  const isActive = router.pathname === path;
-
-  let classes = [styles.navItem];
-  if (isActive) classes.push(styles.active);
-
-  return (
-    <li>
-      <Link href={path}>
-        <a className={classes.join(" ")}>
-          <p className={styles.label}>{label}</p>
-        </a>
-      </Link>
-    </li>
-  );
-};
-
-interface ActionProps {
-  href: string;
-  icon: IconProp;
-  color: Color;
-}
-
-const Action = (props: ActionProps) => (
-  <li>
-    <IconButton
-      href={props.href}
-      target="_blank"
-      rel="noopener noreferrer"
-      icon={props.icon}
-      color={props.color}
-    />
-  </li>
-);
-
 const ROUTES = [
   { label: "Home", path: "/" },
-  { label: "Projects", path: "/projects" },
   { label: "About", path: "/about" },
+  { label: "Develop", path: "/develop" },
 ];
 
 const ACTIONS = [
@@ -93,6 +51,75 @@ const ACTIONS = [
   },
 ];
 
+interface INavItem {
+  label: string;
+  path: string;
+}
+
+const NavItem = ({ label, path }: INavItem) => {
+  const router = useRouter();
+
+  const isActive = router.pathname === path;
+
+  let classes = [styles.navItem];
+  if (isActive) classes.push(styles.active);
+
+  return (
+    <li>
+      <Link href={path}>
+        <a className={classes.join(" ")}>
+          <p className={styles.label}>{label}</p>
+        </a>
+      </Link>
+    </li>
+  );
+};
+
+export const Routes = () => (
+  <ul className={styles.routes}>
+    {ROUTES.map((route) => (
+      <NavItem {...route} key={route.label} />
+    ))}
+  </ul>
+);
+
+interface SocialActionProps {
+  href: string;
+  icon: IconProp;
+  color: Color;
+  size: "sm" | "default";
+}
+
+const SocialAction = (props: SocialActionProps) => (
+  <li>
+    <IconButton
+      href={props.href}
+      target="_blank"
+      rel="noopener noreferrer"
+      icon={props.icon}
+      color={props.color}
+      size={props.size}
+    />
+  </li>
+);
+
+export const Social = ({
+  size = "default",
+}: {
+  size?: SocialActionProps["size"];
+}) => (
+  <ul className={styles.actions}>
+    {ACTIONS.map(({ color, ...action }) => (
+      <SocialAction
+        color={color as Color}
+        size={size}
+        {...action}
+        key={action.href}
+      />
+    ))}
+  </ul>
+);
+
 const Menu = () => {
   const [open, setOpen] = useState(false);
 
@@ -115,16 +142,8 @@ const Menu = () => {
         <Hamburger size={28} color="black" toggled={open} toggle={setOpen} />
       </div>
       <div className={classes.join(" ")}>
-        <ul className={styles.routes}>
-          {ROUTES.map((route) => (
-            <NavItem {...route} key={route.label} />
-          ))}
-        </ul>
-        <ul className={styles.actions}>
-          {ACTIONS.map(({ color, ...action }) => (
-            <Action color={color as Color} {...action} key={action.href} />
-          ))}
-        </ul>
+        <Routes />
+        <Social size="sm" />
       </div>
     </React.Fragment>
   );

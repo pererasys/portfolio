@@ -22,10 +22,8 @@ export const Logo = () => (
 const Header = () => {
   return (
     <header className={styles.root}>
-      <div className={styles.content}>
-        <Logo />
-        <Menu />
-      </div>
+      <Logo />
+      <Menu />
     </header>
   );
 };

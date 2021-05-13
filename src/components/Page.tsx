@@ -8,19 +8,36 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import dynamic from "next/dynamic";
 
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "./navigation/Footer";
+import Header from "./navigation/Header";
 
-const Chat = dynamic(() => import("../Chat"), { ssr: false });
+const Chat = dynamic(() => import("./Chat"), { ssr: false });
 
-import styles from "../../styles/components/navigation/Page.module.scss";
+import styles from "../styles/components/navigation/Page.module.scss";
+
+const PageRoot: React.FC = (props) => (
+  <div className={styles.root}>
+    {props.children}
+    <Chat />
+  </div>
+);
 
 interface Props {
   title: string;
   description: string;
+  HeaderComponent?: React.ElementType;
+  FooterComponent?: React.ElementType;
+  RootComponent?: React.ElementType;
 }
 
-const Page: React.FC<Props> = ({ title, description, children }) => {
+const Page: React.FC<Props> = ({
+  title,
+  description,
+  HeaderComponent = Header,
+  FooterComponent = Footer,
+  RootComponent = PageRoot,
+  children,
+}) => {
   const router = useRouter();
   title = `${title} | Andrew Perera`;
 
@@ -65,12 +82,9 @@ const Page: React.FC<Props> = ({ title, description, children }) => {
         />
         <title>{title}</title>
       </Head>
-      <Header />
-      <div className={styles.root}>
-        {children}
-        <Chat />
-      </div>
-      <Footer />
+      <HeaderComponent />
+      <RootComponent>{children}</RootComponent>
+      <FooterComponent />
     </React.Fragment>
   );
 };

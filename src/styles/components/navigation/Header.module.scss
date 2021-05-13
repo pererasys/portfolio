@@ -8,9 +8,7 @@ header.root {
   z-index: 1;
 
   @include layout(rgba(map-get($colors, "background"), 0.95));
-}
 
-div.content {
   display: flex;
   justify-content: space-between;
   align-items: center;

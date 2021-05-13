@@ -11,7 +11,6 @@ const Footer = () => (
   <footer className={styles.root}>
     <div className={styles.content}>
       <p>Copyright &copy; {new Date().getFullYear()}</p>
-      <p>Designed & developed by me!</p>
     </div>
   </footer>
 );

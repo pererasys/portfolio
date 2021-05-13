@@ -7,9 +7,6 @@ import React, { useEffect, useState } from "react";
 
 import {
   faArrowRight,
-  faEllipsisH,
-  faEnvelope,
-  faPhone,
   faTimes,
   faCommentAlt,
 } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +15,6 @@ import { BeatLoader } from "react-spinners";
 import { enableBodyScroll, disableBodyScroll } from "body-scroll-lock";
 
 import { Button, IconAction, IconButton } from "./common/Buttons";
-import Dropdown, { DropdownList } from "./common/Dropdown";
 import Overlay from "./common/Overlay";
 
 import styles from "../styles/components/Chat.module.scss";
@@ -65,25 +61,6 @@ const NewMessage = () => (
     ></textarea>
     <div className={styles.actions}>
       <Button label="Send" icon={faArrowRight} size="sm" color="accent" />
-      <Dropdown
-        renderAnchor={(open) => (
-          <IconAction
-            icon={faEllipsisH}
-            size="sm"
-            color="accent"
-            onClick={open}
-          />
-        )}
-        y="top"
-        x="right"
-      >
-        <DropdownList
-          options={[
-            { label: "Email", icon: faEnvelope },
-            { label: "Phone", icon: faPhone },
-          ]}
-        />
-      </Dropdown>
     </div>
   </div>
 );

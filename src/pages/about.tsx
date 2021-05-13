@@ -3,7 +3,7 @@
  * Copyright (C) 2021
  */
 
-import Page from "../components/navigation/Page";
+import Page from "../components/Page";
 
 import Landing from "../components/common/Landing";
 

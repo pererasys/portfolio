@@ -53,13 +53,13 @@
 
   & p.subtitle {
     font-size: 32px;
-    line-height: 36px;
+    line-height: 40px;
     font-weight: 300;
     color: map-get($colors, "bodyText");
 
     @media screen and (max-width: $breakpoint-medium) {
       font-size: 24px;
-      line-height: 28px;
+      line-height: 32px;
     }
   }
 }

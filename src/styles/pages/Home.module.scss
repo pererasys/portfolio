@@ -1,12 +1,23 @@
 @import "../variables";
 @import "../common";
 
-@mixin sectionPadding {
+@mixin sectionPadding($colors) {
   padding-top: 100px;
   padding-bottom: 100px;
 
   & .header {
     margin-bottom: 100px;
+
+    & h1 {
+      color: map-get($colors, "text");
+    }
+
+    & p {
+      font-size: 24px;
+      line-height: 32px;
+      color: map-get($colors, "bodyText");
+    }
+
     & h1,
     p {
       text-align: center;
@@ -21,7 +32,9 @@ section.profile {
   align-items: center;
   background-color: map-get($colors, "altBackground");
 
-  @include sectionPadding;
+  @include sectionPadding($colors);
+
+  padding-top: 0;
 
   @media screen and (max-width: $breakpoint-medium) {
     flex: auto;
@@ -67,7 +80,7 @@ section.profile {
 }
 
 section.activities {
-  @include sectionPadding;
+  @include sectionPadding($colors);
 
   & ul {
     flex: 1;
@@ -117,5 +130,18 @@ section.activities {
 @each $name, $color in $colors {
   li.#{$name}Skill {
     @include skill($color);
+  }
+}
+
+section.develop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: map-get($dark, "altBackground");
+
+  @include sectionPadding($dark);
+
+  & button {
+    max-width: 300px;
   }
 }
